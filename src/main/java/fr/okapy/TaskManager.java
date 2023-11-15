@@ -19,6 +19,6 @@ public class TaskManager {
     }
 
     public void add(String description) {
-        tasks.add(new Task("Learn Python"));
+        tasks.add(new Task(description));
     }
 }

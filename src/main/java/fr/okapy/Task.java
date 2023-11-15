@@ -9,10 +9,14 @@ public class Task {
         this.isDone = false;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         // TODO
-        // System.out.println("[ " + isDone ?? "*" : " " + "] " + description);
+        // System.out.println(" [ " + isDone ?? "*" : " " + "] " + description);
         return "";
     }
 }
