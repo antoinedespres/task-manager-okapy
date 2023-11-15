@@ -13,10 +13,18 @@ public class Task {
         return description;
     }
 
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void toggleStatus() {
+        this.isDone = !this.isDone;
+    }
+
     @Override
     public String toString() {
         // TODO
-        // System.out.println(" [ " + isDone ?? "*" : " " + "] " + description);
+        // return " [ " + isDone ?? "*" : " " + "] " + description;
         return "";
     }
 }
