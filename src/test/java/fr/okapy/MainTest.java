@@ -49,4 +49,40 @@ public class MainTest {
         // Then
         assertEquals(0, Main.manager.nbTasks());
     }
+
+    @Test
+    public void run_ShouldUpdateTaskStatusToDone_WhenDoneActionIsEntered() {
+        // Given
+        List<Task> tasks = new ArrayList(){{
+            add(new Task("Learn C++"));
+        }};
+        Main.manager.setTasks(tasks);
+
+        String input = "x 1";
+
+        // When
+        Main.run(input);
+
+        // Then
+        assertTrue(Main.manager.getTasks().get(0).isDone());
+    }
+
+    @Test
+    public void run_ShouldUpdateTaskStatusToUndone_WhenUnDoneActionIsEntered() {
+        // Given
+        Task task = new Task("Learn C++");
+        task.setStatus(true);
+        List<Task> tasks = new ArrayList(){{
+            add(task);
+        }};
+        Main.manager.setTasks(tasks);
+
+        String input = "o 1";
+
+        // When
+        Main.run(input);
+
+        // Then
+        assertFalse(Main.manager.getTasks().get(0).isDone());
+    }
 }

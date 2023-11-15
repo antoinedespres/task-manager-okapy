@@ -19,16 +19,29 @@ public class TaskTest {
     }
 
     @Test
-    public void toggleStatus_ShouldChangeTaskStatus() {
+    public void setStatus_ShouldChangeTaskStatusToDone() {
         // Given
         String description = "Learn TypeScript";
         Task task = new Task(description);
 
         // When
-        task.toggleStatus();
+        task.setStatus(true);
 
         // Then
         assertTrue(task.isDone());
+    }
+
+    @Test
+    public void setStatus_ShouldChangeTaskStatusToToDo() {
+        // Given
+        String description = "Learn TypeScript";
+        Task task = new Task(description);
+
+        // When
+        task.setStatus(false);
+
+        // Then
+        assertFalse(task.isDone());
     }
 
     @Test
@@ -47,7 +60,7 @@ public class TaskTest {
     public void toString_ShouldReturnDoneStringFormat_WhenTaskIsDone() {
         // Given
         Task task = new Task("Test");
-        task.toggleStatus();
+        task.setStatus(true);
 
         // When
         String output = task.toString();

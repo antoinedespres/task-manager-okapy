@@ -31,4 +31,14 @@ public class TaskManager {
             return null;
         return tasks.remove(id);
     }
+
+    public void setToDone(int id) {
+        Task task = this.tasks.get(id);
+        task.setStatus(true);
+    }
+
+    public void setToUndone(int id) {
+        Task task = this.tasks.get(id);
+        task.setStatus(false);
+    }
 }

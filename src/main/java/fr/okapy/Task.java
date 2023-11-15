@@ -17,8 +17,8 @@ public class Task {
         return isDone;
     }
 
-    public void toggleStatus() {
-        this.isDone = !this.isDone;
+    public void setStatus(boolean status) {
+        this.isDone = status;
     }
 
     @Override

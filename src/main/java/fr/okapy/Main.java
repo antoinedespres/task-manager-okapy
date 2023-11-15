@@ -5,7 +5,9 @@ public class Main {
     public static TaskManager manager = new TaskManager();
 
     public static void main(String[] args) {
-
+        /*while (isAlive) {
+            run();
+        }*/
     }
 
     public static void run(String input) {
@@ -21,6 +23,12 @@ public class Main {
         switch(command) {
             case '+':
                 manager.add(subject);
+                break;
+            case 'x':
+                manager.setToDone(Integer.parseInt(subject) - 1 );
+                break;
+            case 'o':
+                manager.setToUndone(Integer.parseInt(subject) - 1 );
                 break;
             case '-':
                 manager.remove(Integer.parseInt(subject) - 1 );
