@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -42,5 +43,21 @@ public class TaskManagerTest {
         // Then
         List<Task> tasks = taskManager.getTasks();
         assertEquals(description, tasks.get(0).getDescription());
+    }
+
+    @Test
+    void remove_shouldRemoveTheCorrectTask_whenRelatedIDIsGiven(){
+        // Given
+        List<Task> tasks = new ArrayList(){{
+            add(new Task("Learn C++"));
+            add(new Task("Learn JavaScript"));
+        }};
+        taskManager.setTasks(tasks);
+
+        // When
+        Task removedTask = taskManager.remove(1);
+
+        // Assert
+        assertEquals("Learn JavaScript",removedTask.getDescription());
     }
 }
