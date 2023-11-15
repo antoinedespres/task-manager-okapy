@@ -31,10 +31,4 @@ public class TaskManagerTest {
         actual = taskManager.nbTasks();
         assertEquals(1, actual);
     }
-
-    @Test
-    void itDoesNotWork() {
-        int actual = 0;
-        assertEquals(1, actual);
-    }
 }
