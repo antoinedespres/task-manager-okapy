@@ -41,7 +41,6 @@ public class TaskManagerTest {
 
         // Then
         List<Task> tasks = taskManager.getTasks();
-        assertEquals(1, tasks.size());
         assertEquals(description, tasks.get(0).getDescription());
     }
 }

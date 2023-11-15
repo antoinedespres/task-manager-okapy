@@ -23,8 +23,7 @@ public class Task {
 
     @Override
     public String toString() {
-        // TODO
-        // return " [ " + isDone ?? "*" : " " + "] " + description;
-        return "";
+        String status = this.isDone ? "x" : " ";
+        return "[" + status + "] " + description;
     }
 }
