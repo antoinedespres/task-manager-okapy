@@ -2,6 +2,8 @@ package fr.okapy;
 
 public class Main {
     public static boolean isAlive = true;
+    public static TaskManager manager = new TaskManager();
+
     public static void main(String[] args) {
 
     }
@@ -10,10 +12,15 @@ public class Main {
         // TODO Split the input
         String[] tokens = input.split(" ", 2);
         char command = tokens[0].charAt(0);
-        isAlive = command != 'q';
+        String subject = tokens[1];
 
-        while(isAlive) {
-
+        switch(command) {
+            case '+':
+                manager.add(subject);
+                break;
+            case 'q':
+                isAlive = false;
+                break;
         }
     }
 }

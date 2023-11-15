@@ -1,8 +1,8 @@
 package fr.okapy;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
 
@@ -16,5 +16,17 @@ public class MainTest {
 
         // Then
         assertFalse(Main.isAlive);
+    }
+
+    @Test
+    public void run_ShouldAddTask_WhenPlusActionIsEntered() {
+        // Given
+        String input = "+ Learn new things";
+
+        // When
+        Main.run(input);
+
+        // Then
+        assertEquals(1, Main.manager.nbTasks());
     }
 }
