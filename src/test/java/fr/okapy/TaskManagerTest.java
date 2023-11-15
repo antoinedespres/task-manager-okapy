@@ -10,6 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class TaskManagerTest {
     private static TaskManager taskManager;
@@ -59,5 +60,20 @@ public class TaskManagerTest {
 
         // Assert
         assertEquals("Learn JavaScript",removedTask.getDescription());
+    }
+
+    @Test
+    void remove_shouldReturnNull_whenThereIsNoCorrespondingTaskToID(){
+        // Given
+        List<Task> tasks = new ArrayList(){{
+            add(new Task("Learn C++"));
+        }};
+        taskManager.setTasks(tasks);
+
+        // When
+        Task removedTask = taskManager.remove(1);
+
+        // Assert
+        assertNull(removedTask);
     }
 }

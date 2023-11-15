@@ -27,6 +27,8 @@ public class TaskManager {
     }
     
     public Task remove(int id) {
+        if (id >= tasks.size())
+            return null;
         return tasks.remove(id);
     }
 }
